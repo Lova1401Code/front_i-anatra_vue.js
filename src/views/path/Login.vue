@@ -17,6 +17,7 @@
   </div>
 </template>
 <script>
+import { accountService } from "@/_services/account_service.js";
 export default {
   name: "login",
   data() {
@@ -29,8 +30,7 @@ export default {
   },
   methods: {
     login() {
-      console.log(this.user.pseudo);
-      console.log(this.user.pass);
+      accountService.login(this.user);
     },
   },
 };
