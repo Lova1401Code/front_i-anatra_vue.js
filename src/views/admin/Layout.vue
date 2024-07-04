@@ -1,41 +1,38 @@
 <template>
-  <div class="">
-    <div class="adm">
-      <AdminNav />
+  <top-nav />
+  <nav-right />
+  <nav-left />
+  <div class="mobile-menu-overlay"></div>
+
+  <div class="main-container">
+    <router-view />
+    <div class="footer-wrap pd-20 mb-20 card-box">
+      DeskApp - Bootstrap 4 Admin Template By
+      <a href="https://github.com/dropways" target="_blank"
+        >Ankit Hingarajiya</a
+      >
     </div>
-    <div class="ad_content">
-      <div class="nav-side">
-        <NavAdmin />
-      </div>
-      <div class="nav-display">
-        <router-view />
-      </div>
-    </div>
-    <p>Admin Layout</p>
   </div>
 </template>
 <script>
-import NavAdmin from "@/components/NavBarAdmin.vue";
-import AdminNav from "@/components/AdminNav.vue";
+import topNav from "@/components/NavTop.vue";
+import navLeft from "@/components/NavLeft.vue";
+import NavRight from "@/components/NavRight.vue";
 export default {
   name: "adminLayout",
   components: {
-    AdminNav,
-    NavAdmin,
+    topNav,
+    navLeft,
+    NavRight,
   },
 };
 </script>
-<style scoped>
-.ad_content {
-  display: flex;
-}
-.nav-side {
-  width: 20%;
-  height: 100%;
-  border-right: solid 1px black;
-}
-.nav-display {
-  width: 100%;
-  padding: 10px;
-}
+<style>
+/* @import url("/assets/vendors/mdi/css/materialdesignicons.min.css");
+@import url("/assets/vendors/flag-icon-css/css/flag-icon.min.css");
+@import url("/assets/vendors/css/vendor.bundle.base.css");
+@import url("/assets/vendors/font-awesome/css/font-awesome.min.css");
+@import url("/assets/vendors/bootstrap-datepicker/bootstrap-datepicker.min.css");
+@import url("/assets/vendors/css/style.css"); */
 </style>
+  
