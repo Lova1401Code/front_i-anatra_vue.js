@@ -50,7 +50,7 @@ const router = createRouter({
         { path: 'eleve/inscription', name: 'inscription', component: eleve.Inscription },
         { path: 'enseignant/edt', name: 'edt', component: enseignant.EmploiDuTemps },
         { path: 'eleve/eleves-en-attente', name: 'elevesEnAttente', component: eleve.ElevesEnAttente },
-        { path: 'eleve/eleve-details', name: 'eleveDetails', component: eleve.ElevesDetails },
+        { path: 'eleve/:idEleve/eleve-details', name: 'eleveDetails', component: eleve.ElevesDetails },
         { path: 'tableau', name: 'tableau', component: admin.Tableau }
       ]
     },

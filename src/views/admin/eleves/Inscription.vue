@@ -44,20 +44,32 @@
           <p class="mb-30">Vueillez saisir les informations nécessaires</p>
         </div>
         <div class="wizard-content">
-          <form class="tab-wizard wizard-circle wizard">
+          <form
+            enctype="multipart/form-data"
+            class="tab-wizard wizard-circle wizard"
+            @submit.prevent="saveEleve"
+          >
             <h5>Information personnel</h5>
             <section>
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">
                     <label>Nom :</label>
-                    <input type="text" class="form-control" />
+                    <input
+                      type="text"
+                      v-model="model.eleve.nom"
+                      class="form-control"
+                    />
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
                     <label>Prénom(s) :</label>
-                    <input type="text" class="form-control" />
+                    <input
+                      type="text"
+                      class="form-control"
+                      v-model="model.eleve.prenom"
+                    />
                   </div>
                 </div>
               </div>
@@ -65,19 +77,27 @@
                 <div class="col-md-6">
                   <div class="form-group">
                     <label>Adresse email:</label>
-                    <input type="email" class="form-control" />
+                    <input
+                      type="email"
+                      class="form-control"
+                      v-model="model.eleve.email"
+                    />
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
                     <label>Date de naissance :</label>
-                    <input type="text" class="form-control" />
+                    <input
+                      type="text"
+                      class="form-control"
+                      v-model="model.eleve.date_naissance"
+                    />
                   </div>
                 </div>
               </div>
               <div class="row">
                 <div class="col-md-6">
-                  <div class="form-group">
+                  <!-- <div class="form-group">
                     <label> :</label>
                     <select class="custom-select form-control">
                       <option value="">Classe actuel</option>
@@ -85,15 +105,23 @@
                       <option value="Berlin">UK</option>
                       <option value="Frankfurt">US</option>
                     </select>
+                  </div> -->
+                  <div class="form-group">
+                    <label>Classe Actuel:</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      v-model="model.eleve.matricule"
+                    />
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
-                    <label>Date de Naissance :</label>
+                    <label>photo de profile</label>
                     <input
-                      type="text"
-                      class="form-control date-picker"
-                      placeholder="Select Date"
+                      type="file"
+                      class="form-control-file form-control height-auto"
+                      @change="fileUploid"
                     />
                   </div>
                 </div>
@@ -107,20 +135,44 @@
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">
-                    <label>Job Title :</label>
-                    <input type="text" class="form-control" />
+                    <label>Nom du père :</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      v-model="model.eleve.pere_nom"
+                    />
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
-                    <label>Company Name :</label>
-                    <input type="text" class="form-control" />
+                    <label>Prénom (s) du père :</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      v-model="model.eleve.pere_prenom"
+                    />
                   </div>
                 </div>
-                <div class="col-md-12">
+              </div>
+              <div class="row">
+                <div class="col-md-6">
                   <div class="form-group">
-                    <label>Job Description :</label>
-                    <textarea class="form-control"></textarea>
+                    <label>Contact du père :</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      v-model="model.eleve.pere_contact"
+                    />
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>Profession Père :</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      v-model="model.eleve.profession_pere"
+                    />
                   </div>
                 </div>
               </div>
@@ -132,33 +184,44 @@
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">
-                    <label>Interview For :</label>
-                    <input type="text" class="form-control" />
-                  </div>
-                  <div class="form-group">
-                    <label>Interview Type :</label>
-                    <select class="form-control">
-                      <option>Normal</option>
-                      <option>Difficult</option>
-                      <option>Hard</option>
-                    </select>
+                    <label>Nom de la Mère :</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      v-model="model.eleve.mere_nom"
+                    />
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
-                    <label>Interview Date :</label>
+                    <label>Prenom(s) Mère :</label>
                     <input
                       type="text"
-                      class="form-control date-picker"
-                      placeholder="Select Date"
+                      class="form-control"
+                      v-model="model.eleve.mere_prenom"
                     />
                   </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
                   <div class="form-group">
-                    <label>Interview Time :</label>
+                    <label>Profession Mère :</label>
                     <input
-                      class="form-control time-picker"
-                      placeholder="Select time"
                       type="text"
+                      class="form-control"
+                      v-model="model.eleve.profession_mere"
+                    />
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>Contact Mère :</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      v-model="model.eleve.mere_contact"
                     />
                   </div>
                 </div>
@@ -171,20 +234,36 @@
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">
-                    <label>Behaviour :</label>
-                    <input type="text" class="form-control" />
+                    <label>Nom Tuteur :</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      v-model="model.eleve.tuteur_nom"
+                    />
                   </div>
                   <div class="form-group">
-                    <label>Confidance</label>
-                    <input type="text" class="form-control" />
+                    <label>Tuteur prénom(s)</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      v-model="model.eleve.tuteur_prenom"
+                    />
                   </div>
                   <div class="form-group">
-                    <label>Result</label>
-                    <select class="form-control">
-                      <option>Select Result</option>
-                      <option>Selected</option>
-                      <option>Rejected</option>
-                    </select>
+                    <label>Contact tuteur</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      v-model="model.eleve.tuteur_contact"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label>Email parent</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      v-model="model.eleve.emailParent"
+                    />
                   </div>
                 </div>
                 <div class="col-md-6">
@@ -195,48 +274,65 @@
                 </div>
               </div>
             </section>
+            <div>
+              <button type="submit" class="btn btn-primary">Envoyer</button>
+            </div>
           </form>
         </div>
       </div>
-
-      <!-- success Popup html Start -->
-      <div
-        class="modal fade"
-        id="success-modal"
-        tabindex="-1"
-        role="dialog"
-        aria-labelledby="exampleModalCenterTitle"
-        aria-hidden="true"
-      >
-        <div class="modal-dialog modal-dialog-centered" role="document">
-          <div class="modal-content">
-            <div class="modal-body text-center font-18">
-              <h3 class="mb-20">Form Submitted!</h3>
-              <div class="mb-30 text-center">
-                <img src="/assets/vendors/images/success.png" />
-              </div>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-              eiusmod
-            </div>
-            <div class="modal-footer justify-content-center">
-              <button
-                type="button"
-                class="btn btn-primary"
-                data-dismiss="modal"
-              >
-                Done
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- success Popup html End -->
     </div>
   </div>
 </template>
 <script>
+import axios from "axios";
 export default {
   name: "inscription",
+  data() {
+    return {
+      model: {
+        eleve: {
+          nom: "",
+          prenom: "",
+          email: "",
+          date_naissance: "",
+          photo_profil: null,
+          pere_nom: "",
+          pere_prenom: "",
+          profession_pere: "",
+          pere_contact: "",
+          mere_nom: "",
+          mere_prenom: "",
+          profession_mere: "",
+          mere_contact: "",
+          emailParent: "",
+          tuteur_nom: "",
+          tuteur_prenom: "",
+          tuteur_contact: "",
+        },
+      },
+    };
+  },
+  methods: {
+    saveEleve() {
+      // Envoyer une requête POST à l'API Symfony avec les données du formulaire
+      axios
+        .post("http://127.0.0.1:8000/api/inscription", this.model.eleve, {
+          headers: { "Content-Type": "multipart/form-data" },
+        })
+        .then((response) => {
+          alert(response.data.message);
+          console.log("Insertion réussie !", response.data);
+          // this.$router.push("/affiche");
+        })
+        .catch((error) => {
+          console.log(this.model.eleve);
+          console.error("Erreur lors de l'insertion :", error);
+        });
+    },
+    fileUploid(event) {
+      this.model.eleve.photo_profil = event.target.files[0];
+    },
+  },
 };
 </script>
 <style></style>

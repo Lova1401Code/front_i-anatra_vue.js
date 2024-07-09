@@ -30,7 +30,7 @@
                       data-toggle="tab"
                       href="#timeline"
                       role="tab"
-                      >Timeline</a
+                      >Parent</a
                     >
                   </li>
                   <li class="nav-item">
@@ -39,7 +39,7 @@
                       data-toggle="tab"
                       href="#tasks"
                       role="tab"
-                      >Tasks</a
+                      >Paiement</a
                     >
                   </li>
                   <li class="nav-item">
@@ -48,7 +48,7 @@
                       data-toggle="tab"
                       href="#setting"
                       role="tab"
-                      >Settings</a
+                      >Validation</a
                     >
                   </li>
                 </ul>
@@ -67,120 +67,61 @@
                         <div class="profile-timeline-list">
                           <ul>
                             <li>
-                              <div class="date">12 Aug</div>
+                              <div class="date"></div>
                               <div class="task-name">
-                                <i class="ion-android-alarm-clock"></i> Task
-                                Added
+                                <i class="ion-android-person"></i> Nom Père :
                               </div>
                               <p>
-                                Lorem ipsum dolor sit amet, consectetur
-                                adipisicing elit.
+                                {{ this.pere_nom }}
                               </p>
-                              <div class="task-time">09:30 am</div>
                             </li>
                             <li>
-                              <div class="date">10 Aug</div>
+                              <div class="date"></div>
                               <div class="task-name">
-                                <i class="ion-ios-chatboxes"></i> Task Added
+                                <i class="ion-android-person"></i> Prénom(s)
+                                Père :
                               </div>
                               <p>
-                                Lorem ipsum dolor sit amet, consectetur
-                                adipisicing elit.
+                                {{ this.pere_prenom }}
                               </p>
-                              <div class="task-time">09:30 am</div>
                             </li>
                             <li>
-                              <div class="date">10 Aug</div>
+                              <div class="date"></div>
                               <div class="task-name">
-                                <i class="ion-ios-clock"></i> Event Added
+                                <i class="ion-android-person"></i> Contact Père
+                                :
                               </div>
                               <p>
-                                Lorem ipsum dolor sit amet, consectetur
-                                adipisicing elit.
+                                {{ this.pere_contact }}
                               </p>
-                              <div class="task-time">09:30 am</div>
                             </li>
                             <li>
-                              <div class="date">10 Aug</div>
+                              <div class="date"></div>
                               <div class="task-name">
-                                <i class="ion-ios-clock"></i> Event Added
+                                <i class="ion-android-person"></i> Profession
+                                Père :
                               </div>
                               <p>
-                                Lorem ipsum dolor sit amet, consectetur
-                                adipisicing elit.
+                                {{ this.profession_pere }}
                               </p>
-                              <div class="task-time">09:30 am</div>
-                            </li>
-                          </ul>
-                        </div>
-                        <div class="timeline-month">
-                          <h5>July, 2020</h5>
-                        </div>
-                        <div class="profile-timeline-list">
-                          <ul>
-                            <li>
-                              <div class="date">12 July</div>
-                              <div class="task-name">
-                                <i class="ion-android-alarm-clock"></i> Task
-                                Added
-                              </div>
-                              <p>
-                                Lorem ipsum dolor sit amet, consectetur
-                                adipisicing elit.
-                              </p>
-                              <div class="task-time">09:30 am</div>
                             </li>
                             <li>
-                              <div class="date">10 July</div>
+                              <div class="date"></div>
                               <div class="task-name">
-                                <i class="ion-ios-chatboxes"></i> Task Added
+                                <i class="ion-android-person"></i> Nom Mère :
                               </div>
                               <p>
-                                Lorem ipsum dolor sit amet, consectetur
-                                adipisicing elit.
+                                {{ this.mere_nom }}
                               </p>
-                              <div class="task-time">09:30 am</div>
-                            </li>
-                          </ul>
-                        </div>
-                        <div class="timeline-month">
-                          <h5>June, 2020</h5>
-                        </div>
-                        <div class="profile-timeline-list">
-                          <ul>
-                            <li>
-                              <div class="date">12 June</div>
-                              <div class="task-name">
-                                <i class="ion-android-alarm-clock"></i> Task
-                                Added
-                              </div>
-                              <p>
-                                Lorem ipsum dolor sit amet, consectetur
-                                adipisicing elit.
-                              </p>
-                              <div class="task-time">09:30 am</div>
                             </li>
                             <li>
-                              <div class="date">10 June</div>
+                              <div class="date"></div>
                               <div class="task-name">
-                                <i class="ion-ios-chatboxes"></i> Task Added
+                                <i class="ion-android-person"></i> Prenom mère :
                               </div>
                               <p>
-                                Lorem ipsum dolor sit amet, consectetur
-                                adipisicing elit.
+                                {{ this.profession_mere }}
                               </p>
-                              <div class="task-time">09:30 am</div>
-                            </li>
-                            <li>
-                              <div class="date">10 June</div>
-                              <div class="task-name">
-                                <i class="ion-ios-clock"></i> Event Added
-                              </div>
-                              <p>
-                                Lorem ipsum dolor sit amet, consectetur
-                                adipisicing elit.
-                              </p>
-                              <div class="task-time">09:30 am</div>
                             </li>
                           </ul>
                         </div>
@@ -902,173 +843,32 @@
                 </div>
               </div>
             </div>
-            <h5 class="text-center h5 mb-0">Ross C. Lopez</h5>
+            <h5 class="text-center h5 mb-0">{{ this.nom }}</h5>
             <p class="text-center text-muted font-14">
-              Lorem ipsum dolor sit amet
+              {{ this.prenom }}
             </p>
             <div class="profile-info">
-              <h5 class="mb-20 h5 text-blue">Contact Information</h5>
+              <h5 class="mb-20 h5 text-blue">
+                Information de l'eleve en attente de validation
+              </h5>
               <ul>
                 <li>
-                  <span>Email Address:</span>
-                  FerdinandMChilds@test.com
+                  <span>Nom:</span>
+                  {{ this.nom }}
                 </li>
                 <li>
-                  <span>Phone Number:</span>
-                  619-229-0054
+                  <span>Prénom(s):</span>
+                  {{ this.prenom }}
                 </li>
                 <li>
-                  <span>Country:</span>
-                  America
+                  <span>Classe Actuel:</span>
+                  {{ this.matricule }}
                 </li>
                 <li>
-                  <span>Address:</span>
-                  1807 Holden Street<br />
-                  San Diego, CA 92115
+                  <span>Date de Naissance:</span>
+                  {{ this.date_naissance }}
                 </li>
               </ul>
-            </div>
-            <div class="profile-social">
-              <h5 class="mb-20 h5 text-blue">Social Links</h5>
-              <ul class="clearfix">
-                <li>
-                  <a
-                    href="#"
-                    class="btn"
-                    data-bgcolor="#3b5998"
-                    data-color="#ffffff"
-                    ><i class="fa fa-facebook"></i
-                  ></a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    class="btn"
-                    data-bgcolor="#1da1f2"
-                    data-color="#ffffff"
-                    ><i class="fa fa-twitter"></i
-                  ></a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    class="btn"
-                    data-bgcolor="#007bb5"
-                    data-color="#ffffff"
-                    ><i class="fa fa-linkedin"></i
-                  ></a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    class="btn"
-                    data-bgcolor="#f46f30"
-                    data-color="#ffffff"
-                    ><i class="fa fa-instagram"></i
-                  ></a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    class="btn"
-                    data-bgcolor="#c32361"
-                    data-color="#ffffff"
-                    ><i class="fa fa-dribbble"></i
-                  ></a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    class="btn"
-                    data-bgcolor="#3d464d"
-                    data-color="#ffffff"
-                    ><i class="fa fa-dropbox"></i
-                  ></a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    class="btn"
-                    data-bgcolor="#db4437"
-                    data-color="#ffffff"
-                    ><i class="fa fa-google-plus"></i
-                  ></a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    class="btn"
-                    data-bgcolor="#bd081c"
-                    data-color="#ffffff"
-                    ><i class="fa fa-pinterest-p"></i
-                  ></a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    class="btn"
-                    data-bgcolor="#00aff0"
-                    data-color="#ffffff"
-                    ><i class="fa fa-skype"></i
-                  ></a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    class="btn"
-                    data-bgcolor="#00b489"
-                    data-color="#ffffff"
-                    ><i class="fa fa-vine"></i
-                  ></a>
-                </li>
-              </ul>
-            </div>
-            <div class="profile-skills">
-              <h5 class="mb-20 h5 text-blue">Key Skills</h5>
-              <h6 class="mb-5 font-14">HTML</h6>
-              <div class="progress mb-20" style="height: 6px">
-                <div
-                  class="progress-bar"
-                  role="progressbar"
-                  style="width: 90%"
-                  aria-valuenow="0"
-                  aria-valuemin="0"
-                  aria-valuemax="100"
-                ></div>
-              </div>
-              <h6 class="mb-5 font-14">Css</h6>
-              <div class="progress mb-20" style="height: 6px">
-                <div
-                  class="progress-bar"
-                  role="progressbar"
-                  style="width: 70%"
-                  aria-valuenow="0"
-                  aria-valuemin="0"
-                  aria-valuemax="100"
-                ></div>
-              </div>
-              <h6 class="mb-5 font-14">jQuery</h6>
-              <div class="progress mb-20" style="height: 6px">
-                <div
-                  class="progress-bar"
-                  role="progressbar"
-                  style="width: 60%"
-                  aria-valuenow="0"
-                  aria-valuemin="0"
-                  aria-valuemax="100"
-                ></div>
-              </div>
-              <h6 class="mb-5 font-14">Bootstrap</h6>
-              <div class="progress mb-20" style="height: 6px">
-                <div
-                  class="progress-bar"
-                  role="progressbar"
-                  style="width: 80%"
-                  aria-valuenow="0"
-                  aria-valuemin="0"
-                  aria-valuemax="100"
-                ></div>
-              </div>
             </div>
           </div>
         </div>
@@ -1077,8 +877,66 @@
   </div>
 </template>
 <script>
+import axios from "axios";
 export default {
   name: "eleveDetails",
+  methods: {
+    afficheEleve(idEleve) {
+      axios
+        .get("http://127.0.0.1:8000/api/eleves-attentes/" + idEleve)
+        .then((res) => {
+          console.log(res.data);
+          this.idE = res.data.id;
+          this.matricule = res.data.matricule;
+          this.nom = res.data.nom;
+          this.prenom = res.data.prenom;
+          this.email = res.data.email;
+          this.date_naissance = res.data.date_naissance;
+          this.photo_profil = res.data.photo_profil;
+          this.pere_nom = res.data.pere_nom;
+          this.pere_prenom = res.data.pere_prenom;
+          this.professon_pere = res.data.professon_pere;
+          this.pere_contact = res.data.pere_contact;
+          this.mere_nom = res.data.mere_nom;
+          this.mere_prenom = res.data.mere_prenom;
+          this.profession_mere = res.data.profession_mere;
+          this.mere_contact = res.data.mere_contact;
+          this.email_parent = res.data.email_parent;
+          this.tuteur_nom = res.data.tuteur_nom;
+          this.tuteur_prenom = res.data.tuteur_prenom;
+          this.tuteur_contact = res.tuteur_contact;
+          this.created_at = res.created_at;
+        });
+    },
+  },
+  data() {
+    return {
+      idE: "",
+      matricule: "",
+      nom: "",
+      prenom: "",
+      email: "",
+      date_naissance: "",
+      photo_profil: "",
+      pere_nom: "",
+      pere_prenom: "",
+      professon_pere: "",
+      pere_contact: "",
+      mere_nom: "",
+      mere_prenom: "",
+      profession_mere: "",
+      mere_contact: "",
+      email_parent: "",
+      tuteur_nom: "",
+      tuteur_prenom: "",
+      tuteur_contact: "",
+      created_at: "",
+      id: this.$route.params.idEleve,
+    };
+  },
+  mounted() {
+    this.afficheEleve(this.id);
+  },
 };
 </script>
 <style></style>
