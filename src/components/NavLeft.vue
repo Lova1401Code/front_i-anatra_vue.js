@@ -83,31 +83,24 @@
           <li class="dropdown">
             <a href="javascript:;" class="dropdown-toggle">
               <span class="micon dw dw-apartment"></span
-              ><span class="mtext"> UI Elements </span>
+              ><span class="mtext"> Classe </span>
             </a>
             <ul class="submenu">
-              <li><a href="ui-buttons.html">Buttons</a></li>
-              <li><a href="ui-cards.html">Cards</a></li>
-              <li><a href="ui-cards-hover.html">Cards Hover</a></li>
-              <li><a href="ui-modals.html">Modals</a></li>
-              <li><a href="ui-tabs.html">Tabs</a></li>
               <li>
-                <a href="ui-tooltip-popover.html">Tooltip &amp; Popover</a>
+                <Router-link to="/admin/classe/6eme">6ème</Router-link>
               </li>
-              <li><a href="ui-sweet-alert.html">Sweet Alert</a></li>
-              <li><a href="ui-notification.html">Notification</a></li>
-              <li><a href="ui-timeline.html">Timeline</a></li>
-              <li><a href="ui-progressbar.html">Progressbar</a></li>
-              <li><a href="ui-typography.html">Typography</a></li>
-              <li><a href="ui-list-group.html">List group</a></li>
-              <li><a href="ui-range-slider.html">Range slider</a></li>
-              <li><a href="ui-carousel.html">Carousel</a></li>
+              <li><a href="ui-cards.html">5ème</a></li>
+              <li><a href="ui-cards-hover.html">4ème</a></li>
+              <li><a href="ui-modals.html">3ème</a></li>
+              <li><a href="ui-tabs.html">seconde</a></li>
+              <li><a href="ui-sweet-alert.html">1èr</a></li>
+              <li><a href="ui-notification.html">Terminale</a></li>
             </ul>
           </li>
           <li class="dropdown">
             <a href="javascript:;" class="dropdown-toggle">
               <span class="micon dw dw-paint-brush"></span
-              ><span class="mtext">Icons</span>
+              ><span class="mtext">Présence</span>
             </a>
             <ul class="submenu">
               <li><a href="font-awesome.html">FontAwesome Icons</a></li>
@@ -120,7 +113,7 @@
           <li class="dropdown">
             <a href="javascript:;" class="dropdown-toggle">
               <span class="micon dw dw-analytics-21"></span
-              ><span class="mtext">Charts</span>
+              ><span class="mtext">Badge</span>
             </a>
             <ul class="submenu">
               <li><a href="highchart.html">Highchart</a></li>
@@ -132,7 +125,7 @@
           <li class="dropdown">
             <a href="javascript:;" class="dropdown-toggle">
               <span class="micon dw dw-right-arrow1"></span
-              ><span class="mtext">Additional Pages</span>
+              ><span class="mtext">Note</span>
             </a>
             <ul class="submenu">
               <li><a href="video-player.html">Video Player</a></li>
@@ -144,7 +137,7 @@
           <li class="dropdown">
             <a href="javascript:;" class="dropdown-toggle">
               <span class="micon dw dw-browser2"></span
-              ><span class="mtext">Error Pages</span>
+              ><span class="mtext">Bulletin</span>
             </a>
             <ul class="submenu">
               <li><a href="400.html">400</a></li>
@@ -158,7 +151,7 @@
           <li class="dropdown">
             <a href="javascript:;" class="dropdown-toggle">
               <span class="micon dw dw-copy"></span
-              ><span class="mtext">Extra Pages</span>
+              ><span class="mtext">Réunion</span>
             </a>
             <ul class="submenu">
               <li><a href="blank.html">Blank</a></li>
@@ -176,7 +169,7 @@
           <li class="dropdown">
             <a href="javascript:;" class="dropdown-toggle">
               <span class="micon dw dw-list3"></span
-              ><span class="mtext">Multi Level Menu</span>
+              ><span class="mtext">Discrussion</span>
             </a>
             <ul class="submenu">
               <li><a href="javascript:;">Level 1</a></li>
@@ -200,7 +193,7 @@
           <li>
             <a href="sitemap.html" class="dropdown-toggle no-arrow">
               <span class="micon dw dw-diagram"></span
-              ><span class="mtext">Sitemap</span>
+              ><span class="mtext">Programme</span>
             </a>
           </li>
           <li>

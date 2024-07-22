@@ -8,6 +8,9 @@ import * as Public from '@/views/public/indexPublic.js'
 import * as admin from '@/views/admin/indexAdmin.js'
 import * as eleve from '@/views/admin/eleves/indexEleve.js'
 import * as enseignant from '@/views/admin/enseignant/indexEnseignant.js'
+import * as classe from '@/views/classe/indexClasse.js'
+import * as bulletin from '@/views/admin/bulletin/indexBulletin.js'
+import * as payment from '@/views/admin/payment/paymentIndex.js'
 
 import { auth_guard } from '@/_helpers/auth-guard.js';
 
@@ -51,7 +54,11 @@ const router = createRouter({
         { path: 'enseignant/edt', name: 'edt', component: enseignant.EmploiDuTemps },
         { path: 'eleve/eleves-en-attente', name: 'elevesEnAttente', component: eleve.ElevesEnAttente },
         { path: 'eleve/:idEleve/eleve-details', name: 'eleveDetails', component: eleve.ElevesDetails },
-        { path: 'tableau', name: 'tableau', component: admin.Tableau }
+        { path: 'tableau', name: 'tableau', component: admin.Tableau },
+        { path: 'classe/6eme', name: 'classeUn', component: classe.ClasseUn },
+        { path: 'classe/bulletin', name: 'bulletinClasse', component: bulletin.BulletinIndex },
+        { path: 'stripe/payment', name: 'stripePayment', component: payment.StripeChechout }
+
       ]
     },
 

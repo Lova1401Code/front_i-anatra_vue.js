@@ -57,16 +57,16 @@
             </tr>
           </thead>
           <tbody>
-            <tr v-for="(user, index) in this.users" :key="index">
+            <tr v-for="(classe, index) in this.classes" :key="index">
               <div class="chat-profile-photo">
                 <img src="/assets/vendors/images/profile-photo.jpg" alt="" />
               </div>
               <!-- <th scope="row">{{ user.profile_photo_path }}</th> -->
-              <td>{{ user.name }}</td>
-              <td>{{ user.email }}</td>
+              <td>{{ classe.nom }}</td>
+              <td>{{ classe.annee_scolaire_id }}</td>
               <td>
                 <span class="badge badge-primary">{{
-                  user.Type_utilisateur
+                  classe.enseignant_id
                 }}</span>
               </td>
               <td>
@@ -83,7 +83,7 @@
                     class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list"
                   >
                     <a
-                      v-on:click="afficheDetail(user.id)"
+                      v-on:click="afficheDetail(classe.id)"
                       class="dropdown-item"
                       href="#"
                       ><i class="dw dw-eye"></i>Détails</a
@@ -108,26 +108,23 @@
 <script>
 import axios from "axios";
 export default {
-  name: "userIndex",
+  name: "BulletinIndex",
   data() {
     return {
-      users: [],
+      classes: [],
     };
   },
   mounted() {
-    this.getUsers();
+    this.getClasse();
   },
   methods: {
-    getUsers() {
-      axios.get("http://127.0.0.1:8000/api/user").then((res) => {
-        this.users = res.data;
+    getClasse() {
+      axios.get("http://127.0.0.1:8000/api/classes").then((res) => {
+        this.classes = res.data;
+        console.log(this.classes);
       });
-    },
-    afficheDetail(idUser) {
-      this.$router.push("/admin/eleve/" + idEleve + "/eleve-details");
     },
   },
 };
 </script>
-<style scoped>
-</style>
+<style></style>
