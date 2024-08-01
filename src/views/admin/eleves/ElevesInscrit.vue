@@ -13,7 +13,7 @@
                   <a href="index.html">Accueil</a>
                 </li>
                 <li class="breadcrumb-item active" aria-current="page">
-                  Eleves En Attente
+                  Eleves Inscrit
                 </li>
               </ol>
             </nav>
@@ -84,7 +84,9 @@
       <div class="pd-20 card-box mb-30">
         <div class="clearfix mb-20">
           <div class="pull-left">
-            <h4 class="text-info h4">Liste des Matières</h4>
+            <h4 class="text-info h4">
+              Liste des Eleves Inscript en année Scolaire :
+            </h4>
           </div>
         </div>
         <!-- bouton dowload -->
@@ -164,11 +166,11 @@
                     />
                   </div>
                 </td>
-                <td>{{ eleve.nom }}</td>
-                <td>{{ eleve.prenom }}</td>
-                <td>{{ eleve.date_naissance }}</td>
+                <td>{{ eleve.id }}</td>
+                <td>{{ eleve.classe }}</td>
+                <td>{{ eleve.adresse }}</td>
                 <td>
-                  <span class="badge badge-info">{{ eleve.pere_contact }}</span>
+                  <span class="badge badge-info">{{ eleve.classe }}</span>
                 </td>
                 <td>
                   <div class="dropdown">
@@ -222,7 +224,7 @@
 <script>
 import axios from "axios";
 export default {
-  name: "elevesEnAttente",
+  name: "elevesInscrit",
   data() {
     return {
       eleves: [],
@@ -233,8 +235,8 @@ export default {
   },
   methods: {
     getEleves() {
-      axios.get("http://127.0.0.1:8000/api/eleves-attentes").then((res) => {
-        this.eleves = res.data;
+      axios.get("http://127.0.0.1:8000/api/eleveValidee").then((res) => {
+        this.eleves = res.data.eleveValidee;
         console.log(this.eleves);
       });
     },

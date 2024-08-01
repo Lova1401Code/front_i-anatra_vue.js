@@ -40,7 +40,7 @@
             <ul class="submenu">
               <li>
                 <RouterLink to="/admin/eleve/eleves-en-attente"
-                  >Eleves En Attente</RouterLink
+                  >Liste des Eleves</RouterLink
                 >
               </li>
               <li>
@@ -87,14 +87,15 @@
             </a>
             <ul class="submenu">
               <li>
-                <Router-link to="/admin/classe/6eme">6ème</Router-link>
+                <Router-link to="/admin/classe/listeClasse"
+                  >Liste des classes</Router-link
+                >
               </li>
-              <li><a href="ui-cards.html">5ème</a></li>
-              <li><a href="ui-cards-hover.html">4ème</a></li>
-              <li><a href="ui-modals.html">3ème</a></li>
-              <li><a href="ui-tabs.html">seconde</a></li>
-              <li><a href="ui-sweet-alert.html">1èr</a></li>
-              <li><a href="ui-notification.html">Terminale</a></li>
+              <li>
+                <Router-link to="/admin/classe/listeEleveParClasse"
+                  >Eleves par classe</Router-link
+                >
+              </li>
             </ul>
           </li>
           <li class="dropdown">

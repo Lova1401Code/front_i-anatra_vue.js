@@ -84,7 +84,7 @@
       <div class="pd-20 card-box mb-30">
         <div class="clearfix mb-20">
           <div class="pull-left">
-            <h4 class="text-info h4">Liste des Matières</h4>
+            <h4 class="text-info h4">Liste des eleves dans la classe de :</h4>
           </div>
         </div>
         <!-- bouton dowload -->
@@ -164,11 +164,11 @@
                     />
                   </div>
                 </td>
-                <td>{{ eleve.nom }}</td>
-                <td>{{ eleve.prenom }}</td>
-                <td>{{ eleve.date_naissance }}</td>
+                <td>{{ eleve.adresse }}</td>
+                <td>{{ eleve.adresse }}</td>
+                <td>{{ eleve.adresse }}</td>
                 <td>
-                  <span class="badge badge-info">{{ eleve.pere_contact }}</span>
+                  <span class="badge badge-info">{{ eleve.adresse }}</span>
                 </td>
                 <td>
                   <div class="dropdown">
@@ -226,6 +226,7 @@ export default {
   data() {
     return {
       eleves: [],
+      id: this.$route.params.idClasse,
     };
   },
   mounted() {
@@ -233,10 +234,12 @@ export default {
   },
   methods: {
     getEleves() {
-      axios.get("http://127.0.0.1:8000/api/eleves-attentes").then((res) => {
-        this.eleves = res.data;
-        console.log(this.eleves);
-      });
+      axios
+        .get("http://127.0.0.1:8000/api/classes/" + this.id + "/eleves")
+        .then((res) => {
+          this.eleves = res.data;
+          console.log(this.eleves);
+        });
     },
     getImageUrl(photoName) {
       return "http://127.0.0.1:8000/storage/" + photoName;

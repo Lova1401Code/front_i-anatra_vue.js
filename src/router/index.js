@@ -11,6 +11,13 @@ import * as enseignant from '@/views/admin/enseignant/indexEnseignant.js'
 import * as classe from '@/views/classe/indexClasse.js'
 import * as bulletin from '@/views/admin/bulletin/indexBulletin.js'
 import * as payment from '@/views/admin/payment/paymentIndex.js'
+import * as note from '@/views/admin/note/noteIndex.js'
+import * as anneeScolaire from '@/views/admin/setting/annees_scolaire/anneeScolaireIndex.js'
+import * as matiere from '@/views/admin/setting/matiere/matiereIndex.js'
+import * as salle from '@/views/admin/setting/salle/salleIndex.js'
+import * as trimestre from '@/views/admin/setting/trimestre/trimestre.js'
+import * as edt from '@/views/admin/emploiDuTemps/indexEDT.js'
+
 
 import { auth_guard } from '@/_helpers/auth-guard.js';
 
@@ -34,7 +41,7 @@ const router = createRouter({
         },
         {
           path: '/Accueil', name: 'acceuil', component: Public.Accueil
-        }
+        },
       ]
     },
     {
@@ -54,10 +61,21 @@ const router = createRouter({
         { path: 'enseignant/edt', name: 'edt', component: enseignant.EmploiDuTemps },
         { path: 'eleve/eleves-en-attente', name: 'elevesEnAttente', component: eleve.ElevesEnAttente },
         { path: 'eleve/:idEleve/eleve-details', name: 'eleveDetails', component: eleve.ElevesDetails },
+        { path: 'classe/:idClasse/listeEleves', name: 'listeEleves', component: classe.listeEleveParClasse },
         { path: 'tableau', name: 'tableau', component: admin.Tableau },
         { path: 'classe/6eme', name: 'classeUn', component: classe.ClasseUn },
+        { path: 'classe/listeClasse', name: 'listeClasse', component: classe.ListeClasse },
+        { path: 'classe/listeEleveParClasse', name: 'listeEleveParClasse', component: classe.listeEleveParClasse },
         { path: 'classe/bulletin', name: 'bulletinClasse', component: bulletin.BulletinIndex },
-        { path: 'stripe/payment', name: 'stripePayment', component: payment.StripeChechout }
+        { path: 'stripe/payment', name: 'stripePayment', component: payment.StripeChechout },
+        { path: 'note/elevesListe', name: 'noteEleveList', component: note.IndexNote },
+        { path: 'note/eleve', name: 'noteEleve', component: note.NoteEleve },
+        { path: 'anneeScolaire', name: 'anneeScolaire', component: anneeScolaire.ListeAnneeScolaire },
+        { path: 'matiere', name: 'matiere', component: matiere.ListeMatiere },
+        { path: 'salle', name: 'salle', component: salle.ListeSalle },
+        { path: 'trimestre', name: 'trimestre', component: trimestre.ListeTrimestre },
+        { path: 'eleve/elevesInscrit', name: 'elevesInscrit', component: eleve.ElevesInscrit },
+        // { path: 'edt', name: 'edt', component: edt.Edt },
 
       ]
     },

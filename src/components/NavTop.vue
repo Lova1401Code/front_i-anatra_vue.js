@@ -174,7 +174,10 @@
               ><i class="dw dw-user1"></i> Profile</a
             >
             <a class="dropdown-item" href="profile.html"
-              ><i class="dw dw-settings2"></i> Setting</a
+              ><i class="dw dw-settings2"></i>
+              <Router-link to="/admin/anneeScolaire"
+                >Configuration</Router-link
+              ></a
             >
             <a class="dropdown-item" href="faq.html"
               ><i class="dw dw-help"></i> Help</a

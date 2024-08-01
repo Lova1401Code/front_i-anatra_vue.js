@@ -124,7 +124,7 @@ export default {
       });
     },
     afficheDetail(idUser) {
-      this.$router.push("/admin/eleve/" + idEleve + "/eleve-details");
+      this.$router.push("/admin/eleve/" + idUser + "/eleve-details");
     },
   },
 };
