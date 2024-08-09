@@ -1,14 +1,14 @@
 <template>
   <div class="left-side-bar">
-    <div class="brand-logo">
+    <div class="brand-logo" style="padding-top: 70px">
       <a href="index.html">
         <img
-          src="/assets/vendors/images/deskapp-logo.svg"
+          src="/assets/vendors/images/logosite.png"
           alt=""
           class="dark-logo"
         />
         <img
-          src="/assets/vendors/images/deskapp-logo-white.svg"
+          src="/assets/vendors/images/logosite.png"
           alt=""
           class="light-logo"
         />
@@ -17,12 +17,12 @@
         <i class="ion-close-round"></i>
       </div>
     </div>
-    <div class="menu-block customscroll">
+    <div class="menu-block customscroll" style="padding-top: 40px">
       <div class="sidebar-menu">
         <ul id="accordion-menu">
           <li class="dropdown">
             <a href="javascript:;" class="dropdown-toggle">
-              <span class="micon dw dw-house-1"></span
+              <span class="micon dw dw-house-1 bg-info"></span
               ><span class="mtext">Home</span>
             </a>
             <ul class="submenu">
@@ -34,13 +34,23 @@
           </li>
           <li class="dropdown">
             <a href="javascript:;" class="dropdown-toggle">
-              <span class="micon dw dw-edit2"></span
+              <span class="micon dw dw-user-3 bg-info"></span
               ><span class="mtext">Eleve</span>
             </a>
             <ul class="submenu">
               <li>
                 <RouterLink to="/admin/eleve/eleves-en-attente"
-                  >Liste des Eleves</RouterLink
+                  >Liste globale</RouterLink
+                >
+              </li>
+              <li>
+                <RouterLink to="/admin/eleve/eleves-en-attente"
+                  >Liste par classe</RouterLink
+                >
+              </li>
+              <li>
+                <RouterLink to="/admin/eleve/eleves-en-attente"
+                  >Liste par Periode</RouterLink
                 >
               </li>
               <li>
@@ -52,7 +62,30 @@
           </li>
           <li class="dropdown">
             <a href="javascript:;" class="dropdown-toggle">
-              <span class="micon dw dw-library"></span
+              <span class="micon dw dw-conference bg-info"></span
+              ><span class="mtext">Enseignant</span>
+            </a>
+            <ul class="submenu">
+              <li>
+                <RouterLink to="/admin/eleve/eleves-en-attente"
+                  >Nouveau</RouterLink
+                >
+              </li>
+              <li>
+                <RouterLink to="/admin/eleve/eleves-en-attente"
+                  >Liste</RouterLink
+                >
+              </li>
+              <li>
+                <RouterLink to="/admin/eleve/eleves-en-attente"
+                  >Liste par classe</RouterLink
+                >
+              </li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="javascript:;" class="dropdown-toggle">
+              <span class="micon dw dw-user3 bg-info"></span
               ><span class="mtext">Utilisateur</span>
             </a>
             <ul class="submenu">
@@ -68,21 +101,73 @@
           </li>
           <li class="dropdown">
             <a href="javascript:;" class="dropdown-toggle">
-              <span class="micon dw dw-library"></span
-              ><span class="mtext">Emploi du temps</span>
+              <span class="micon dw dw-open-book bg-info"></span
+              ><span class="mtext">Cahier de texte</span>
             </a>
             <ul class="submenu">
               <li>
-                <RouterLink to="/admin/enseignant/edt">Enseignant</RouterLink>
+                <RouterLink to="/admin/enseignant/edt">Remplissage</RouterLink>
               </li>
               <li>
-                <RouterLink to="/admin/enseignant/edt">Eleve</RouterLink>
+                <RouterLink to="/admin/enseignant/edt">Consultation</RouterLink>
+              </li>
+            </ul>
+          </li>
+
+          <li class="dropdown">
+            <a href="javascript:;" class="dropdown-toggle">
+              <span class="micon dw dw-calendar1 bg-info"></span
+              ><span class="mtext">Emploi du temps</span>
+            </a>
+            <ul class="submenu">
+              <li><a href="contact-directory.html">Contact Directory</a></li>
+              <li><a href="blog.html">Blog</a></li>
+              <li><a href="blog-detail.html">Blog Detail</a></li>
+              <li><a href="product.html">Product</a></li>
+            </ul>
+          </li>
+
+          <li class="dropdown">
+            <a href="javascript:;" class="dropdown-toggle">
+              <span class="micon dw dw-money-1 bg-info"></span
+              ><span class="mtext"> Scolarité </span>
+            </a>
+            <ul class="submenu">
+              <li>
+                <Router-link to="/admin/classe/listeClasse"
+                  >Fixation des montants</Router-link
+                >
+              </li>
+              <li>
+                <Router-link to="/admin/classe/listeEleveParClasse"
+                  >Nouveau règlement</Router-link
+                >
+              </li>
+              <li>
+                <Router-link to="/admin/classe/listeEleveParClasse"
+                  >Règlements par éleves</Router-link
+                >
+              </li>
+              <li>
+                <Router-link to="/admin/classe/listeEleveParClasse"
+                  >Eleves en retard de règlement</Router-link
+                >
+              </li>
+              <li>
+                <Router-link to="/admin/classe/listeEleveParClasse"
+                  >Eleves ayant tout reglé</Router-link
+                >
+              </li>
+              <li>
+                <Router-link to="/admin/classe/listeEleveParClasse"
+                  >Statistique</Router-link
+                >
               </li>
             </ul>
           </li>
           <li class="dropdown">
             <a href="javascript:;" class="dropdown-toggle">
-              <span class="micon dw dw-apartment"></span
+              <span class="micon dw dw-property bg-info"></span
               ><span class="mtext"> Classe </span>
             </a>
             <ul class="submenu">
@@ -100,58 +185,97 @@
           </li>
           <li class="dropdown">
             <a href="javascript:;" class="dropdown-toggle">
-              <span class="micon dw dw-paint-brush"></span
+              <span class="micon dw dw-checked bg-info"></span
               ><span class="mtext">Présence</span>
             </a>
             <ul class="submenu">
-              <li><a href="font-awesome.html">FontAwesome Icons</a></li>
-              <li><a href="foundation.html">Foundation Icons</a></li>
-              <li><a href="ionicons.html">Ionicons Icons</a></li>
-              <li><a href="themify.html">Themify Icons</a></li>
-              <li><a href="custom-icon.html">Custom Icons</a></li>
+              <li>
+                <Router-link to="/admin/classe/listeEleveParClasse"
+                  >Eleves par classe</Router-link
+                >
+              </li>
+              <li>
+                <Router-link to="/admin/classe/listeEleveParClasse"
+                  >Consultation des absences</Router-link
+                >
+              </li>
+
+              <li>
+                <Router-link to="/admin/classe/listeEleveParClasse"
+                  >Justification d'absence</Router-link
+                >
+              </li>
             </ul>
           </li>
           <li class="dropdown">
             <a href="javascript:;" class="dropdown-toggle">
-              <span class="micon dw dw-analytics-21"></span
+              <span class="micon dw dw-id-card bg-info"></span
               ><span class="mtext">Badge</span>
             </a>
             <ul class="submenu">
-              <li><a href="highchart.html">Highchart</a></li>
-              <li><a href="knob-chart.html">jQuery Knob</a></li>
-              <li><a href="jvectormap.html">jvectormap</a></li>
-              <li><a href="apexcharts.html">Apexcharts</a></li>
+              <li>
+                <Router-link to="/admin/badge/badgeEleve"
+                  >Badge pour l'élève</Router-link
+                >
+              </li>
+              <li>
+                <Router-link to="/admin/badge/badgeEleve"
+                  >Badge pour l'enseignant</Router-link
+                >
+              </li>
             </ul>
           </li>
           <li class="dropdown">
             <a href="javascript:;" class="dropdown-toggle">
-              <span class="micon dw dw-right-arrow1"></span
-              ><span class="mtext">Note</span>
+              <span class="micon dw dw-pen bg-info"></span
+              ><span class="mtext">Notes</span>
             </a>
             <ul class="submenu">
-              <li><a href="video-player.html">Video Player</a></li>
-              <li><a href="login.html">Login</a></li>
-              <li><a href="forgot-password.html">Forgot Password</a></li>
-              <li><a href="reset-password.html">Reset Password</a></li>
+              <li>
+                <Router-link to="/admin/note/selectEleve"
+                  >Enregistrement des notes</Router-link
+                >
+              </li>
+              <li>
+                <Router-link to="/admin/classe/listeEleveParClasse"
+                  >Consultation des evaluations</Router-link
+                >
+              </li>
+              <li>
+                <Router-link to="/admin/classe/listeEleveParClasse"
+                  >Consultation des Moyennes</Router-link
+                >
+              </li>
             </ul>
           </li>
           <li class="dropdown">
             <a href="javascript:;" class="dropdown-toggle">
-              <span class="micon dw dw-browser2"></span
-              ><span class="mtext">Bulletin</span>
+              <span class="micon dw dw-notebook bg-info"></span
+              ><span class="mtext">Bulletin de notes</span>
             </a>
             <ul class="submenu">
-              <li><a href="400.html">400</a></li>
-              <li><a href="403.html">403</a></li>
-              <li><a href="404.html">404</a></li>
-              <li><a href="500.html">500</a></li>
-              <li><a href="503.html">503</a></li>
+              <li>
+                <Router-link to="/admin/classe/listeEleveParClasse"
+                  >Consultation</Router-link
+                >
+              </li>
+              <li>
+                <Router-link to="/admin/classe/listeEleveParClasse"
+                  >Tablette des notes</Router-link
+                >
+              </li>
+
+              <li>
+                <Router-link to="/admin/classe/listeEleveParClasse"
+                  >Statistique des moyennes</Router-link
+                >
+              </li>
             </ul>
           </li>
 
           <li class="dropdown">
             <a href="javascript:;" class="dropdown-toggle">
-              <span class="micon dw dw-copy"></span
+              <span class="micon dw dw-video-camera bg-info"></span
               ><span class="mtext">Réunion</span>
             </a>
             <ul class="submenu">
@@ -169,7 +293,7 @@
           </li>
           <li class="dropdown">
             <a href="javascript:;" class="dropdown-toggle">
-              <span class="micon dw dw-list3"></span
+              <span class="micon dw dw-list3 bg-info"></span
               ><span class="mtext">Discrussion</span>
             </a>
             <ul class="submenu">

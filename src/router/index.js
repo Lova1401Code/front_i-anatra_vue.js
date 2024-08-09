@@ -17,6 +17,7 @@ import * as matiere from '@/views/admin/setting/matiere/matiereIndex.js'
 import * as salle from '@/views/admin/setting/salle/salleIndex.js'
 import * as trimestre from '@/views/admin/setting/trimestre/trimestre.js'
 import * as edt from '@/views/admin/emploiDuTemps/indexEDT.js'
+import * as badge from '@/views/admin/badge/indexBadge.js'
 
 
 import { auth_guard } from '@/_helpers/auth-guard.js';
@@ -75,6 +76,10 @@ const router = createRouter({
         { path: 'salle', name: 'salle', component: salle.ListeSalle },
         { path: 'trimestre', name: 'trimestre', component: trimestre.ListeTrimestre },
         { path: 'eleve/elevesInscrit', name: 'elevesInscrit', component: eleve.ElevesInscrit },
+        { path: 'badge/badgeEleve', name: 'elevesBadge', component: badge.ElevesBadge },
+        { path: 'badge/createBadgeEleve/:id', name: 'createBadgeEleve', component: badge.CreateBadgeEleve },
+        { path: 'note/selectEleve', name: 'selectEleve', component: note.SelectEleve },
+        { path: 'note/listeEleveSelectionner', name: 'listeEleveSelectionner', component: note.ListeEleveSelectionner },
         // { path: 'edt', name: 'edt', component: edt.Edt },
 
       ]
